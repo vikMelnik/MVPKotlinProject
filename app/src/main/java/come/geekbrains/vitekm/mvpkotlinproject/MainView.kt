@@ -1,5 +1,7 @@
 package come.geekbrains.vitekm.mvpkotlinproject
 
 interface MainView {
-    fun setText(counters: String)
+    fun setTextOne(counters: String)
+    fun setTextTwo(counters: String)
+    fun setTextThree(counters: String)
 }

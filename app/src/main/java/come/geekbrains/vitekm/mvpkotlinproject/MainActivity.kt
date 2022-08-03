@@ -2,59 +2,52 @@ package come.geekbrains.vitekm.mvpkotlinproject
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import come.geekbrains.vitekm.mvpkotlinproject.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), MainView {
 
     private lateinit var binding: ActivityMainBinding
 
-    private val counters = mutableListOf(0, 0, 0)
+    private lateinit var presenter: CountersPresenter
 
+    private var counterModel = CountersModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        initViews()
+        initPresenter()
 
-        with(binding){
+        with(binding) {
             btnNumber1.setOnClickListener {
-                tvText1.text = (++ counters[0]).toString()
+                presenter.onCounterClickOne()
+
             }
             btnNumber2.setOnClickListener {
-                tvText2.text =  counters[1].toString()
+                presenter.onCounterClickTwo()
+
             }
             btnNumber3.setOnClickListener {
-                tvText3.text = counters[2].toString()
+                presenter.onCounterClickThree()
             }
 
         }
     }
 
-    private fun initViews() {
-        with(binding){
-            tvText1.text = counters[0].toString()
-            tvText2.text = counters[1].toString()
-            tvText3.text = counters[2].toString()
-        }
+    private fun initPresenter() {
+        presenter = CountersPresenter(this, counterModel)
     }
 
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-        outState.putIntArray("counters", counters.toIntArray())
+    override fun setTextOne(counters: String) {
+        binding.tvText1.text = counters
     }
 
-    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
-        super.onRestoreInstanceState(savedInstanceState)
-        val array = savedInstanceState.getIntArray("counters")
-        counters.let { list->
-            list.clear()
-            array?.toList()?.let {
-                list.addAll(it)
-            }
-        }
-        initViews()
+    override fun setTextTwo(counters: String) {
+        binding.tvText2.text = counters
+    }
+
+    override fun setTextThree(counters: String) {
+        binding.tvText3.text = counters
     }
 }
