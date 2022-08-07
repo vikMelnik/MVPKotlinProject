@@ -3,21 +3,21 @@ package come.geekbrains.vitekm.mvpkotlinproject
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import come.geekbrains.vitekm.mvpkotlinproject.databinding.ActivityMainBinding
+import moxy.MvpAppCompatActivity
+import moxy.ktx.moxyPresenter
+import moxy.presenter.InjectPresenter
 
-class MainActivity : AppCompatActivity(), MainView {
+class MainActivity : MvpAppCompatActivity(), MainView {
 
     private lateinit var binding: ActivityMainBinding
 
-    private lateinit var presenter: CountersPresenter
-
-    private var counterModel = CountersModel()
+    private val presenter by moxyPresenter { CountersPresenter(CountersModel()) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        initPresenter()
 
         with(binding) {
             btnNumber1.setOnClickListener {
@@ -35,19 +35,16 @@ class MainActivity : AppCompatActivity(), MainView {
         }
     }
 
-    private fun initPresenter() {
-        presenter = CountersPresenter(this, counterModel)
+
+    override fun setTextOne(counters: String) = with(binding) {
+      tvTextOne.text = counters
     }
 
-    override fun setTextOne(counters: String) {
-        binding.tvText1.text = counters
+    override fun setTextTwo(counters: String) = with(binding) {
+       tvTextTwo.text = counters
     }
 
-    override fun setTextTwo(counters: String) {
-        binding.tvText2.text = counters
-    }
-
-    override fun setTextThree(counters: String) {
-        binding.tvText3.text = counters
+    override fun setTextThree(counters: String) = with(binding){
+        tvTextThree.text = counters
     }
 }
