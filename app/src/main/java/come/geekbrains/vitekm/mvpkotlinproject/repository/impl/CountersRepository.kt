@@ -1,6 +1,6 @@
-package come.geekbrains.vitekm.mvpkotlinproject
+package come.geekbrains.vitekm.mvpkotlinproject.repository.impl
 
-class CountersModel {
+class CountersRepository {
     private val counters = mutableListOf(0, 0, 0)
 
     fun getCurrent(position: Int): Int {
