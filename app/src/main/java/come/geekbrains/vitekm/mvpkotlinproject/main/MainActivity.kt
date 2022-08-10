@@ -40,5 +40,4 @@ class MainActivity : MvpAppCompatActivity(), MainView {
         }
         presenter.onBackPressed()
     }
-
 }
