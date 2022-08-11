@@ -1,4 +1,4 @@
-package come.geekbrains.vitekm.mvpkotlinproject.user
+package come.geekbrains.vitekm.mvpkotlinproject.user.listuser
 
 import com.github.terrakok.cicerone.Router
 import come.geekbrains.vitekm.mvpkotlinproject.core.nav.UsersScreen

@@ -1,4 +1,4 @@
-package come.geekbrains.vitekm.mvpkotlinproject.user
+package come.geekbrains.vitekm.mvpkotlinproject.user.listuser
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

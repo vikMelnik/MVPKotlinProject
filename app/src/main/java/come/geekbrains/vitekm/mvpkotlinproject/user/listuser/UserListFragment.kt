@@ -1,4 +1,4 @@
-package come.geekbrains.vitekm.mvpkotlinproject.user
+package come.geekbrains.vitekm.mvpkotlinproject.user.listuser
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import come.geekbrains.vitekm.mvpkotlinproject.GeekBrainsApp
 import come.geekbrains.vitekm.mvpkotlinproject.core.OnBackPressedListener
 import come.geekbrains.vitekm.mvpkotlinproject.databinding.FragmentUserListBinding
-import come.geekbrains.vitekm.mvpkotlinproject.model.GithubUser
 import come.geekbrains.vitekm.mvpkotlinproject.repository.impl.GithubRepositoryImpl
 import come.geekbrains.vitekm.mvpkotlinproject.user.userinterface.UserView
 import moxy.MvpAppCompatFragment
@@ -23,7 +22,7 @@ class UserListFragment: MvpAppCompatFragment(), UserView, OnBackPressedListener 
         UserPresenter(GithubRepositoryImpl(), GeekBrainsApp.instance.router)
     }
 
-    private var mAdapter:UsersListAdapter? = null
+    private var mAdapter: UsersListAdapter? = null
     private var vb: FragmentUserListBinding? = null
 
     override fun onCreateView(
