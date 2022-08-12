@@ -34,7 +34,6 @@ class UserListFragment: MvpAppCompatFragment(), UserView, OnBackPressedListener 
             vb = it
         }.root
 
-
     override fun initList() {
         vb?.rvGithubUsers?.layoutManager = LinearLayoutManager(requireContext())
         mAdapter = UsersListAdapter(presenter.usersListPresenter)
@@ -45,7 +44,6 @@ class UserListFragment: MvpAppCompatFragment(), UserView, OnBackPressedListener 
     override fun updateList() {
         mAdapter?.notifyDataSetChanged()
     }
-
 
 
     override fun onDestroyView() {

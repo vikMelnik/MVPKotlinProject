@@ -5,13 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
-import androidx.fragment.app.Fragment
-import com.github.terrakok.cicerone.Screen
+import come.geekbrains.vitekm.mvpkotlinproject.GeekBrainsApp
+import come.geekbrains.vitekm.mvpkotlinproject.core.OnBackPressedListener
 import come.geekbrains.vitekm.mvpkotlinproject.databinding.FragmentLoginUserBinding
-import come.geekbrains.vitekm.mvpkotlinproject.model.GithubUser
+import come.geekbrains.vitekm.mvpkotlinproject.repository.impl.GithubRepositoryImpl
+import come.geekbrains.vitekm.mvpkotlinproject.user.userinterface.UserInfoView
+import moxy.MvpAppCompatFragment
+import moxy.ktx.moxyPresenter
 
 
-class LoginUserFragment : Fragment(), Screen {
+class LoginUserFragment : MvpAppCompatFragment(), UserInfoView, OnBackPressedListener {
 
 
     private lateinit var viewBinding: FragmentLoginUserBinding
@@ -28,6 +31,10 @@ class LoginUserFragment : Fragment(), Screen {
         arguments?.getString(ARG_USER, "MrFox")
     }
 
+    private val presenter: LoginUserPresenter by moxyPresenter {
+        LoginUserPresenter(userLogin, GithubRepositoryImpl(), GeekBrainsApp.instance.router)
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -37,17 +44,15 @@ class LoginUserFragment : Fragment(), Screen {
             viewBinding = it
         }.root
     }
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        arguments?.getParcelable<GithubUser>(ARG_USER)?.let {
-           viewBinding.login.text = userLogin
-        }
-    }
-
-
 
     override fun onDestroy() {
         super.onDestroy()
+    }
+
+    override fun onBackPressed(): Boolean = presenter.onBackPressed()
+
+    override fun showLogin(text: String) {
+        viewBinding.login.text = text
     }
 
 }

@@ -7,4 +7,6 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class GithubUser (
     val login: String
-        ): Parcelable
+        ): Parcelable {
+
+}
