@@ -55,4 +55,19 @@ class LoginUserFragment : MvpAppCompatFragment(), UserInfoView, OnBackPressedLis
         viewBinding.login.text = text
     }
 
+    override fun showProgressBar() {
+        this.viewBinding.progressBar.visibility = View.VISIBLE
+    }
+
+    override fun hideProgressBar() {
+        viewBinding.progressBar.visibility = View.GONE
+    }
+
+    override fun showErrorBar() {
+        this.viewBinding.imageViewError.visibility = View.VISIBLE
+    }
+
+    override fun hideErrorBar() {
+        this.viewBinding.imageViewError.visibility = View.GONE
+    }
 }

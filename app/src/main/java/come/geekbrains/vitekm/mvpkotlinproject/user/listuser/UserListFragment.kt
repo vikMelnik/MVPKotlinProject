@@ -2,6 +2,7 @@ package come.geekbrains.vitekm.mvpkotlinproject.user.listuser
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import come.geekbrains.vitekm.mvpkotlinproject.GeekBrainsApp
@@ -43,6 +44,13 @@ class UserListFragment: MvpAppCompatFragment(), UserView, OnBackPressedListener 
 
     override fun updateList() {
         mAdapter?.notifyDataSetChanged()
+    }
+    override fun showProgressBar() {
+        this.vb?.progressBar?.visibility = View.VISIBLE
+    }
+
+    override fun hideProgressBar() {
+        vb?.progressBar?.visibility = View.GONE
     }
 
 
