@@ -1,0 +1,10 @@
+package come.geekbrains.vitekm.mvpkotlinproject.repository
+
+import come.geekbrains.vitekm.mvpkotlinproject.model.GithubUser
+import io.reactivex.rxjava3.core.Single
+
+interface GithubRepository {
+
+    fun getUsers(): Single<List<GithubUser>>
+
+}
