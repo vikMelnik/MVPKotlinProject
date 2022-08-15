@@ -64,17 +64,9 @@ class UserPresenter(
             })
     }
 
-//    override fun onFirstViewAttach() {
-//        super.onFirstViewAttach()
-//        viewState.initList()
-//        var listUsers = repository.getUsers()
-//        usersListPresenter.users.addAll(listUsers)
-//        usersListPresenter.itemClickListener = { itemView ->
-//            router.navigateTo(UsersScreen.userInfo(repository.getUsers()[itemView.pos].login))
-//        }
-//        viewState.updateList()
-//    }
-
+    fun goToImageConverter() {
+        router.navigateTo(UsersScreen.imageConverter())
+    }
     fun onBackPressed(): Boolean {
         router.exit()
         return true

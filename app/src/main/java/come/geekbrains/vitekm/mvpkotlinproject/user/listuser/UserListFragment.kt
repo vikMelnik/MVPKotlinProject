@@ -39,6 +39,7 @@ class UserListFragment: MvpAppCompatFragment(), UserView, OnBackPressedListener 
         vb?.rvGithubUsers?.layoutManager = LinearLayoutManager(requireContext())
         mAdapter = UsersListAdapter(presenter.usersListPresenter)
         vb?.rvGithubUsers?.adapter = mAdapter
+        vb?.btnGoToImgConverter?.setOnClickListener { presenter.goToImageConverter() }
 
     }
 

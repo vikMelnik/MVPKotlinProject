@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AndroidStudioProjects/KotlinLesson/MVPKotlinProject/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/KotlinLesson/MVPKotlinProject/app/src/main/res/layout/fragment_image_converter.xml" value="0.3307291666666667" />
         <entry key="..\:/AndroidStudioProjects/KotlinLesson/MVPKotlinProject/app/src/main/res/layout/fragment_login_user.xml" value="0.3307291666666667" />
         <entry key="..\:/AndroidStudioProjects/KotlinLesson/MVPKotlinProject/app/src/main/res/layout/fragment_user_list.xml" value="0.3307291666666667" />
         <entry key="..\:/AndroidStudioProjects/KotlinLesson/MVPKotlinProject/app/src/main/res/layout/item_user.xml" value="0.3307291666666667" />
