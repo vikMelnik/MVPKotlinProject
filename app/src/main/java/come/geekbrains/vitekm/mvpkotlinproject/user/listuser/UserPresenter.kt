@@ -26,6 +26,7 @@ class UserPresenter(
             val user = users[view.pos]
             user.login.let {
                 view.setLogin(user.login)
+                view.setImageAvatar(user.avatarUrl)
             }
         }
 

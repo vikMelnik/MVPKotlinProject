@@ -2,14 +2,16 @@ package come.geekbrains.vitekm.mvpkotlinproject.user.listuser
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import come.geekbrains.vitekm.mvpkotlinproject.databinding.ItemUserBinding
+import come.geekbrains.vitekm.mvpkotlinproject.user.userinterface.IImageLoader
 import come.geekbrains.vitekm.mvpkotlinproject.user.userinterface.IUserListPresenter
 import come.geekbrains.vitekm.mvpkotlinproject.user.userinterface.UserItemView
 
 class UsersListAdapter(
-    private val presenter: IUserListPresenter
-
+    private val presenter: IUserListPresenter,
+    val imageLoader: IImageLoader<ImageView>
 ) : RecyclerView.Adapter<UsersListAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolder(
@@ -34,6 +36,11 @@ class UsersListAdapter(
 
         override fun setLogin(text: String) = with(vb) {
             tvUserLogin.text = text
+        }
+        override fun setImageAvatar(url: String) = with(vb) {
+
+                imageLoader.loadInfo(url,ivUserAvatar)
+
         }
 
     }

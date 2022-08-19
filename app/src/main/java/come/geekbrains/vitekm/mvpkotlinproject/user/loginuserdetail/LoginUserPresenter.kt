@@ -1,8 +1,9 @@
 package come.geekbrains.vitekm.mvpkotlinproject.user.loginuserdetail
 
 import com.github.terrakok.cicerone.Router
-import come.geekbrains.vitekm.mvpkotlinproject.model.GithubUserNew
+import come.geekbrains.vitekm.mvpkotlinproject.model.GithubUser
 import come.geekbrains.vitekm.mvpkotlinproject.repository.impl.GithubRepositoryImpl
+import come.geekbrains.vitekm.mvpkotlinproject.repository.impl.GithubRepositoryImplOld
 import moxy.MvpPresenter
 import come.geekbrains.vitekm.mvpkotlinproject.user.userinterface.UserInfoView
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
@@ -26,7 +27,7 @@ class LoginUserPresenter(
             repository.getUserById(userId)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
-                    object : SingleObserver<GithubUserNew> {
+                    object : SingleObserver<GithubUser> {
                         override fun onSubscribe(d: Disposable) {
                             disposables.add(d)
                         }
@@ -37,9 +38,10 @@ class LoginUserPresenter(
                             viewState.showErrorBar()
                         }
 
-                        override fun onSuccess(t: GithubUserNew) {
+                        override fun onSuccess(t: GithubUser) {
                             if (t != null) {
-                                t.let { viewState.showLogin(it.login) }
+                                t.let { viewState.showLogin(it.login)
+                                viewState.setImageAvatar(it.avatarUrl)}
                                 viewState.hideProgressBar()
                             }
                         }

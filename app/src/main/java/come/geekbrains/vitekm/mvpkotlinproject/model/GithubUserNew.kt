@@ -6,6 +6,4 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 class GithubUserNew (
     val login: String,
-    val id: Int): Parcelable{
-
-    }
+    val id: Int): Parcelable

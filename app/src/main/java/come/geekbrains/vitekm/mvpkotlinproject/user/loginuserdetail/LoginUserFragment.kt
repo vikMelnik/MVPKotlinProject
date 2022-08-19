@@ -7,8 +7,11 @@ import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import come.geekbrains.vitekm.mvpkotlinproject.GeekBrainsApp
 import come.geekbrains.vitekm.mvpkotlinproject.core.OnBackPressedListener
+import come.geekbrains.vitekm.mvpkotlinproject.core.network.NetworkProvider
 import come.geekbrains.vitekm.mvpkotlinproject.databinding.FragmentLoginUserBinding
+import come.geekbrains.vitekm.mvpkotlinproject.glide.GlideImageLoader
 import come.geekbrains.vitekm.mvpkotlinproject.repository.impl.GithubRepositoryImpl
+import come.geekbrains.vitekm.mvpkotlinproject.repository.impl.GithubRepositoryImplOld
 import come.geekbrains.vitekm.mvpkotlinproject.user.userinterface.UserInfoView
 import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
@@ -32,7 +35,7 @@ class LoginUserFragment : MvpAppCompatFragment(), UserInfoView, OnBackPressedLis
     }
 
     private val presenter: LoginUserPresenter by moxyPresenter {
-        LoginUserPresenter(userLogin, GithubRepositoryImpl(), GeekBrainsApp.instance.router)
+        LoginUserPresenter(userLogin, GithubRepositoryImpl(NetworkProvider.usersApi), GeekBrainsApp.instance.router)
     }
 
     override fun onCreateView(
@@ -53,6 +56,11 @@ class LoginUserFragment : MvpAppCompatFragment(), UserInfoView, OnBackPressedLis
 
     override fun showLogin(text: String) {
         viewBinding.login.text = text
+
+    }
+
+    override fun setImageAvatar(url: String): Unit = with(viewBinding) {
+        this?.imageViewUserAvatar?.let { GlideImageLoader().loadInfo(url, it) }
     }
 
     override fun showProgressBar() {

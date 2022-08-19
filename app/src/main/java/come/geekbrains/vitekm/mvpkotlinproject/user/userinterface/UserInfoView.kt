@@ -9,4 +9,6 @@ import moxy.viewstate.strategy.StateStrategyType
 @StateStrategyType(AddToEndSingleStrategy::class)
 interface UserInfoView:  ProgressView, ErrorView, MvpView {
     fun showLogin(text: String)
+    fun setImageAvatar(url: String)
+
 }

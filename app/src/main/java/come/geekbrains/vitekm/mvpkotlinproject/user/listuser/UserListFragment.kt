@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import come.geekbrains.vitekm.mvpkotlinproject.GeekBrainsApp
 import come.geekbrains.vitekm.mvpkotlinproject.core.OnBackPressedListener
+import come.geekbrains.vitekm.mvpkotlinproject.core.network.NetworkProvider
 import come.geekbrains.vitekm.mvpkotlinproject.databinding.FragmentUserListBinding
+import come.geekbrains.vitekm.mvpkotlinproject.glide.GlideImageLoader
 import come.geekbrains.vitekm.mvpkotlinproject.repository.impl.GithubRepositoryImpl
 import come.geekbrains.vitekm.mvpkotlinproject.user.userinterface.UserView
 import moxy.MvpAppCompatFragment
@@ -20,7 +22,7 @@ class UserListFragment: MvpAppCompatFragment(), UserView, OnBackPressedListener 
     }
 
     private val presenter: UserPresenter by moxyPresenter {
-        UserPresenter(GithubRepositoryImpl(), GeekBrainsApp.instance.router)
+        UserPresenter(GithubRepositoryImpl(NetworkProvider.usersApi), GeekBrainsApp.instance.router)
     }
 
     private var mAdapter: UsersListAdapter? = null
@@ -37,7 +39,7 @@ class UserListFragment: MvpAppCompatFragment(), UserView, OnBackPressedListener 
 
     override fun initList() {
         vb?.rvGithubUsers?.layoutManager = LinearLayoutManager(requireContext())
-        mAdapter = UsersListAdapter(presenter.usersListPresenter)
+        mAdapter = UsersListAdapter(presenter.usersListPresenter, GlideImageLoader())
         vb?.rvGithubUsers?.adapter = mAdapter
         vb?.btnGoToImgConverter?.setOnClickListener { presenter.goToImageConverter() }
 
