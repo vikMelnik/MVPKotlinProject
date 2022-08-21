@@ -11,4 +11,20 @@
     <string name="btn_start_converting_text">Start Converting</string>
     <string name="btn_abort_converse_text">Abort Conversation</string>
 
+    <string name="textView_default_bottom_string_for_item_holder">Нижняя строка карточки</string>
+    <string name="ImageView_contentDescription_add_to_favorites">Иконка статуса нахождения в избранном / отслеживаемом</string>
+    <string name="ImageView_contentDescription_error">Иконка сообщающая о налицчии ошибки</string>
+    <string name="error_message_not_uri">Ошибка: Uri = null (не передан)</string>
+    <string name="textView_default_name_repo_for_item_holder">Краткое наименование репозитория для холдера</string>
+    <string name="textView_default_description_repo_for_item_holder">Описание репозитория для холдера</string>
+    <string name="default_text_description_string_plug">описание репозитория (полное имя, описание, даты и т.п.)</string>
+    <string name="textView_default_name_repository_for_item_holder">краткое наименование репозитория для холдера</string>
+    <string name="tv_count_of_forks_string_stub">Количество форков: 100000</string>
+
+    <string name="ImageView_contentDescription_go_to_details_user">Аватар пользователя</string>
+    <string name="textView_default_login_user_for_item_holder">Логин пользователя</string>
+    <string name="default_text_top_string_plug">Полное имя пользователя (ФИО)</string>
+    <string name="textView_string_stub">Строка статуса пользователя</string>
+    <string name="ImageView_contentDescription_give_a_rating">Особая отметка</string>
+
 </resources>

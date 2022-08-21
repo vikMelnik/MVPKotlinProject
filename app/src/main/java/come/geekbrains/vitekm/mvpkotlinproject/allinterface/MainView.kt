@@ -1,4 +1,4 @@
-package come.geekbrains.vitekm.mvpkotlinproject.main
+package come.geekbrains.vitekm.mvpkotlinproject.allinterface
 
 
 import moxy.MvpView

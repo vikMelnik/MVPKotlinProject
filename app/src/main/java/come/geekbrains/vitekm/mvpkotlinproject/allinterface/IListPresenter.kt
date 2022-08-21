@@ -1,4 +1,4 @@
-package come.geekbrains.vitekm.mvpkotlinproject.user.userinterface
+package come.geekbrains.vitekm.mvpkotlinproject.allinterface
 
 interface IListPresenter<V : IItemView> {
 

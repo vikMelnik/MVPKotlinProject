@@ -1,4 +1,4 @@
-package come.geekbrains.vitekm.mvpkotlinproject.repository
+package come.geekbrains.vitekm.mvpkotlinproject.allinterface
 
 import come.geekbrains.vitekm.mvpkotlinproject.model.GithubUser
 import io.reactivex.rxjava3.core.Single

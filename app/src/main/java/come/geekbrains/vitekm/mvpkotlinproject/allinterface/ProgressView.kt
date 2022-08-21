@@ -1,4 +1,4 @@
-package come.geekbrains.vitekm.mvpkotlinproject.user.userinterface
+package come.geekbrains.vitekm.mvpkotlinproject.allinterface
 
 import moxy.viewstate.strategy.AddToEndSingleStrategy
 import moxy.viewstate.strategy.StateStrategyType

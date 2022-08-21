@@ -11,71 +11,70 @@ import come.geekbrains.vitekm.mvpkotlinproject.core.network.NetworkProvider
 import come.geekbrains.vitekm.mvpkotlinproject.databinding.FragmentLoginUserBinding
 import come.geekbrains.vitekm.mvpkotlinproject.glide.GlideImageLoader
 import come.geekbrains.vitekm.mvpkotlinproject.repository.impl.GithubRepositoryImpl
-import come.geekbrains.vitekm.mvpkotlinproject.repository.impl.GithubRepositoryImplOld
-import come.geekbrains.vitekm.mvpkotlinproject.user.userinterface.UserInfoView
+import come.geekbrains.vitekm.mvpkotlinproject.allinterface.UserInfoView
 import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
 
 
-class LoginUserFragment : MvpAppCompatFragment(), UserInfoView, OnBackPressedListener {
+//class LoginUserFragment : MvpAppCompatFragment(), OnBackPressedListener {
+//
+//
+//    private lateinit var viewBinding: FragmentLoginUserBinding
+//
+//    companion object {
+//        private const val ARG_USER = "ARG_USER_LOGIN"
+//
+//        fun newInstance(userLogin: String) =
+//            LoginUserFragment().apply { arguments = bundleOf(ARG_USER to userLogin) }
+//    }
+//
+//
+//    private val userLogin: String? by lazy {
+//        arguments?.getString(ARG_USER, "MrFox")
+//    }
+//
+//    private val presenter: LoginUserPresenter by moxyPresenter {
+//        LoginUserPresenter(userLogin, GithubRepositoryImpl(NetworkProvider.usersApi), GeekBrainsApp.instance.router)
+//    }
+//
+//    override fun onCreateView(
+//        inflater: LayoutInflater,
+//        container: ViewGroup?,
+//        savedInstanceState: Bundle?,
+//    ): View {
+//        return FragmentLoginUserBinding.inflate(inflater, container, false).also {
+//            viewBinding = it
+//        }.root
+//    }
+//
+//    override fun onDestroy() {
+//        super.onDestroy()
+//    }
+//
+//    override fun onBackPressed(): Boolean = presenter.onBackPressed()
 
-
-    private lateinit var viewBinding: FragmentLoginUserBinding
-
-    companion object {
-        private const val ARG_USER = "ARG_USER_LOGIN"
-
-        fun newInstance(userLogin: String) =
-            LoginUserFragment().apply { arguments = bundleOf(ARG_USER to userLogin) }
-    }
-
-
-    private val userLogin: String? by lazy {
-        arguments?.getString(ARG_USER, "MrFox")
-    }
-
-    private val presenter: LoginUserPresenter by moxyPresenter {
-        LoginUserPresenter(userLogin, GithubRepositoryImpl(NetworkProvider.usersApi), GeekBrainsApp.instance.router)
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?,
-    ): View {
-        return FragmentLoginUserBinding.inflate(inflater, container, false).also {
-            viewBinding = it
-        }.root
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-    }
-
-    override fun onBackPressed(): Boolean = presenter.onBackPressed()
-
-    override fun showLogin(text: String) {
-        viewBinding.login.text = text
-
-    }
-
-    override fun setImageAvatar(url: String): Unit = with(viewBinding) {
-        this?.imageViewUserAvatar?.let { GlideImageLoader().loadInfo(url, it) }
-    }
-
-    override fun showProgressBar() {
-        this.viewBinding.progressBar.visibility = View.VISIBLE
-    }
-
-    override fun hideProgressBar() {
-        viewBinding.progressBar.visibility = View.GONE
-    }
-
-    override fun showErrorBar() {
-        this.viewBinding.imageViewError.visibility = View.VISIBLE
-    }
-
-    override fun hideErrorBar() {
-        this.viewBinding.imageViewError.visibility = View.GONE
-    }
-}
+//    override fun showLogin(text: String) {
+//        viewBinding.login.text = text
+//
+//    }
+//
+//    override fun setImageAvatar(url: String): Unit = with(viewBinding) {
+//        this?.imageViewUserAvatar?.let { GlideImageLoader().loadInfo(url, it) }
+//    }
+//
+//    override fun showProgressBar() {
+//        this.viewBinding.progressBar.visibility = View.VISIBLE
+//    }
+//
+//    override fun hideProgressBar() {
+//        viewBinding.progressBar.visibility = View.GONE
+//    }
+//
+//    override fun showErrorBar() {
+//        this.viewBinding.imageViewError.visibility = View.VISIBLE
+//    }
+//
+//    override fun hideErrorBar() {
+//        this.viewBinding.imageViewError.visibility = View.GONE
+//    }
+//}

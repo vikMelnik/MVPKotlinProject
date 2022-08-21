@@ -12,7 +12,7 @@ import come.geekbrains.vitekm.mvpkotlinproject.core.OnBackPressedListener
 import come.geekbrains.vitekm.mvpkotlinproject.databinding.FragmentImageConverterBinding
 import come.geekbrains.vitekm.mvpkotlinproject.model.ConverterJpgToPng
 import come.geekbrains.vitekm.mvpkotlinproject.schedulers.MySchedulersFactory
-import come.geekbrains.vitekm.mvpkotlinproject.user.userinterface.ImageConverterView
+import come.geekbrains.vitekm.mvpkotlinproject.allinterface.ImageConverterView
 import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
 

@@ -4,7 +4,7 @@ import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import come.geekbrains.vitekm.mvpkotlinproject.R
-import come.geekbrains.vitekm.mvpkotlinproject.user.userinterface.IImageLoader
+import come.geekbrains.vitekm.mvpkotlinproject.allinterface.IImageLoader
 
 class GlideImageLoader : IImageLoader<ImageView> {
     override fun loadInfo(url: String, container: ImageView) {

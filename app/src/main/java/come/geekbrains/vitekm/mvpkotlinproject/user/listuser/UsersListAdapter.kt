@@ -5,9 +5,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import come.geekbrains.vitekm.mvpkotlinproject.databinding.ItemUserBinding
-import come.geekbrains.vitekm.mvpkotlinproject.user.userinterface.IImageLoader
-import come.geekbrains.vitekm.mvpkotlinproject.user.userinterface.IUserListPresenter
-import come.geekbrains.vitekm.mvpkotlinproject.user.userinterface.UserItemView
+import come.geekbrains.vitekm.mvpkotlinproject.allinterface.IImageLoader
+import come.geekbrains.vitekm.mvpkotlinproject.allinterface.IUserListPresenter
+import come.geekbrains.vitekm.mvpkotlinproject.allinterface.UserItemView
 
 class UsersListAdapter(
     private val presenter: IUserListPresenter,

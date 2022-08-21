@@ -1,5 +1,6 @@
-package come.geekbrains.vitekm.mvpkotlinproject.user.userinterface
+package come.geekbrains.vitekm.mvpkotlinproject.allinterface
 
+import come.geekbrains.vitekm.mvpkotlinproject.allinterface.ProgressView
 import moxy.MvpView
 import moxy.viewstate.strategy.AddToEndSingleStrategy
 import moxy.viewstate.strategy.StateStrategyType

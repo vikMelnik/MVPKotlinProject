@@ -1,9 +1,9 @@
 package come.geekbrains.vitekm.mvpkotlinproject.repository.impl
 
 import come.geekbrains.vitekm.mvpkotlinproject.core.mapper.UserMapper
-import come.geekbrains.vitekm.mvpkotlinproject.core.network.UsersApi
+import come.geekbrains.vitekm.mvpkotlinproject.allinterface.UsersApi
 import come.geekbrains.vitekm.mvpkotlinproject.model.GithubUser
-import come.geekbrains.vitekm.mvpkotlinproject.repository.GithubRepository
+import come.geekbrains.vitekm.mvpkotlinproject.allinterface.GithubRepository
 import io.reactivex.rxjava3.core.Single
 
 class GithubRepositoryImpl constructor(

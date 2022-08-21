@@ -11,7 +11,7 @@ import come.geekbrains.vitekm.mvpkotlinproject.core.network.NetworkProvider
 import come.geekbrains.vitekm.mvpkotlinproject.databinding.FragmentUserListBinding
 import come.geekbrains.vitekm.mvpkotlinproject.glide.GlideImageLoader
 import come.geekbrains.vitekm.mvpkotlinproject.repository.impl.GithubRepositoryImpl
-import come.geekbrains.vitekm.mvpkotlinproject.user.userinterface.UserView
+import come.geekbrains.vitekm.mvpkotlinproject.allinterface.UserView
 import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
 

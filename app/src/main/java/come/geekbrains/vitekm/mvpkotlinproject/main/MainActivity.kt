@@ -4,6 +4,7 @@ import android.os.Bundle
 import com.github.terrakok.cicerone.androidx.AppNavigator
 import come.geekbrains.vitekm.mvpkotlinproject.GeekBrainsApp
 import come.geekbrains.vitekm.mvpkotlinproject.R
+import come.geekbrains.vitekm.mvpkotlinproject.allinterface.MainView
 import come.geekbrains.vitekm.mvpkotlinproject.core.OnBackPressedListener
 import come.geekbrains.vitekm.mvpkotlinproject.databinding.ActivityMainBinding
 import moxy.MvpAppCompatActivity

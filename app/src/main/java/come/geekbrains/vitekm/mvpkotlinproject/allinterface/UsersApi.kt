@@ -1,12 +1,11 @@
-package come.geekbrains.vitekm.mvpkotlinproject.core.network
+package come.geekbrains.vitekm.mvpkotlinproject.allinterface
 
-import come.geekbrains.vitekm.mvpkotlinproject.model.GithubUser
+import come.geekbrains.vitekm.mvpkotlinproject.core.network.UserDto
 import io.reactivex.rxjava3.core.Single
 import retrofit2.http.GET
 import retrofit2.http.Path
 
-interface UsersApi {
-
+interface UsersApi : IDataApi {
 
     @GET("/users")
     fun getAllUsers(): Single<List<UserDto>>

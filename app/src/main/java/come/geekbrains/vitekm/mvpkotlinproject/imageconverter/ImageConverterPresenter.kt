@@ -4,7 +4,7 @@ import android.net.Uri
 import com.github.terrakok.cicerone.Router
 import come.geekbrains.vitekm.mvpkotlinproject.model.ConverterJpgToPng
 import come.geekbrains.vitekm.mvpkotlinproject.schedulers.MySchedulers
-import come.geekbrains.vitekm.mvpkotlinproject.user.userinterface.ImageConverterView
+import come.geekbrains.vitekm.mvpkotlinproject.allinterface.ImageConverterView
 import io.reactivex.rxjava3.core.SingleObserver
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.disposables.Disposable

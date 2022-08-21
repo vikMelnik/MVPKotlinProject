@@ -1,7 +1,7 @@
 package come.geekbrains.vitekm.mvpkotlinproject.repository.impl
 
 import come.geekbrains.vitekm.mvpkotlinproject.model.GithubUser
-import come.geekbrains.vitekm.mvpkotlinproject.repository.GithubRepository
+import come.geekbrains.vitekm.mvpkotlinproject.allinterface.GithubRepository
 import io.reactivex.rxjava3.core.Single
 import java.util.concurrent.TimeUnit
 

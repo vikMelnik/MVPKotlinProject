@@ -3,10 +3,10 @@ package come.geekbrains.vitekm.mvpkotlinproject.user.listuser
 import com.github.terrakok.cicerone.Router
 import come.geekbrains.vitekm.mvpkotlinproject.core.nav.UsersScreen
 import come.geekbrains.vitekm.mvpkotlinproject.model.GithubUser
-import come.geekbrains.vitekm.mvpkotlinproject.repository.GithubRepository
-import come.geekbrains.vitekm.mvpkotlinproject.user.userinterface.IUserListPresenter
-import come.geekbrains.vitekm.mvpkotlinproject.user.userinterface.UserItemView
-import come.geekbrains.vitekm.mvpkotlinproject.user.userinterface.UserView
+import come.geekbrains.vitekm.mvpkotlinproject.allinterface.GithubRepository
+import come.geekbrains.vitekm.mvpkotlinproject.allinterface.IUserListPresenter
+import come.geekbrains.vitekm.mvpkotlinproject.allinterface.UserItemView
+import come.geekbrains.vitekm.mvpkotlinproject.allinterface.UserView
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.SingleObserver
 import io.reactivex.rxjava3.disposables.CompositeDisposable
@@ -53,7 +53,7 @@ class UserPresenter(
                         viewState.hideProgressBar()
                         usersListPresenter.users.addAll(t)
                         usersListPresenter.itemClickListener = { itemView ->
-                            router.navigateTo(UsersScreen.userInfo(t[itemView.pos].login))
+                            router.navigateTo(UsersScreen.repoInfo(t[itemView.pos].login))
                         }
                         viewState.updateList()
                     }
