@@ -39,8 +39,7 @@ class LoginUserPresenter(
                         override fun onSuccess(t: Repository) {
                             t.let {
                                 viewState.showLogin(it.owner.login)
-                                viewState.setImageAvatar(it.owner.avatarUrl)
-
+                                //viewState.setImageAvatar(it.owner.avatarUrl)
                                 viewState.showNameRepository(it.name)
                                 viewState.showDescriptionRepository(
                                     t.description
