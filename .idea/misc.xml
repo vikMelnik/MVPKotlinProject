@@ -3,10 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidStudioProjects/KotlinLesson/MVPKotlinProject/app/src/main/res/drawable/ic_baseline_favorite_border_24.xml.xml" value="0.1375" />
         <entry key="..\:/AndroidStudioProjects/KotlinLesson/MVPKotlinProject/app/src/main/res/drawable/ic_baseline_track_changes_24.xml" value="0.1375" />
         <entry key="..\:/AndroidStudioProjects/KotlinLesson/MVPKotlinProject/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/AndroidStudioProjects/KotlinLesson/MVPKotlinProject/app/src/main/res/layout/fragment_image_converter.xml" value="0.3307291666666667" />
-        <entry key="..\:/AndroidStudioProjects/KotlinLesson/MVPKotlinProject/app/src/main/res/layout/fragment_login_user.xml" value="0.3307291666666667" />
+        <entry key="..\:/AndroidStudioProjects/KotlinLesson/MVPKotlinProject/app/src/main/res/layout/fragment_login_user.xml" value="0.25" />
         <entry key="..\:/AndroidStudioProjects/KotlinLesson/MVPKotlinProject/app/src/main/res/layout/fragment_user_list.xml" value="0.3307291666666667" />
         <entry key="..\:/AndroidStudioProjects/KotlinLesson/MVPKotlinProject/app/src/main/res/layout/fragment_user_repository_info.xml" value="0.3307291666666667" />
         <entry key="..\:/AndroidStudioProjects/KotlinLesson/MVPKotlinProject/app/src/main/res/layout/item_user.xml" value="0.3307291666666667" />

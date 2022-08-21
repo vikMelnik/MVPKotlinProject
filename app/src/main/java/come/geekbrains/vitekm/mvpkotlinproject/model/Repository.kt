@@ -26,6 +26,8 @@ data class Repository(
     val description: String,
     @SerializedName("forks_count")
     val forksCount: Int,
+    @SerializedName("stargazers_count")
+    val stargazersCount: Int,
     @SerializedName("starred_url")
     val watchersCount: Int
 ) : Parcelable

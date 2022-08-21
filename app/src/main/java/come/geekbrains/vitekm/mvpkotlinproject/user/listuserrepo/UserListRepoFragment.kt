@@ -18,7 +18,7 @@ import come.geekbrains.vitekm.mvpkotlinproject.schedulers.MySchedulersFactory
 import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
 
-class UserListRepoFragment: MvpAppCompatFragment(), UserInfoView, OnBackPressedListener {
+class UserListRepoFragment : MvpAppCompatFragment(), UserInfoView, OnBackPressedListener {
 
     companion object {
         private const val ARG_USER = "ARG_USER_LOGIN"
@@ -36,13 +36,13 @@ class UserListRepoFragment: MvpAppCompatFragment(), UserInfoView, OnBackPressedL
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ) =
         FragmentUserRepositoryInfoBinding.inflate(inflater, container, false).also {
             vb = it
         }.root
 
-    val presenter: UserListRepoPresenter by moxyPresenter {
+    private val presenter: UserListRepoPresenter by moxyPresenter {
         UserListRepoPresenter(
             userLogin,
             RetrofitUserRepo(NetworkProvider.usersApi),

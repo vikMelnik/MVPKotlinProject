@@ -95,12 +95,12 @@ class UserListRepoPresenter(
 
     fun onGetUserReposSuccess(userRepositories: List<Repository>, userInfo: GithubUserNew) {
         viewState.showTopString(
-            "Загружено публичных репозиториев :"
+            "Загружено репозиториев :"
                     + userRepositories.size + " из " + userInfo.publicRepos
         )
         reposListPresenter.repositories.addAll(userRepositories)
         reposListPresenter.itemClickListener = { itemView ->
-            router.navigateTo(UsersScreen.repoInfo(userRepositories[itemView.pos].url))
+            router.navigateTo(UsersScreen.userInfo(userRepositories[itemView.pos].url))
         }
         viewState.updateList()
     }

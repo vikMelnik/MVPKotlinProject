@@ -9,14 +9,15 @@ import come.geekbrains.vitekm.mvpkotlinproject.imageconverter.ImageConverterFrag
 
 import come.geekbrains.vitekm.mvpkotlinproject.user.listuser.UserListFragment
 import come.geekbrains.vitekm.mvpkotlinproject.user.listuserrepo.UserListRepoFragment
+import come.geekbrains.vitekm.mvpkotlinproject.user.loginuserdetail.LoginUserFragment
 
 
 object UsersScreen : FragmentScreen {
     override fun createFragment(factory: FragmentFactory): Fragment {
         return UserListFragment.newInstance()
     }
-//    fun userInfo(userLogin: String): FragmentScreen =
-//        FragmentScreen { LoginUserFragment.newInstance(userLogin) }
+    fun userInfo(userLogin: String): FragmentScreen =
+        FragmentScreen { LoginUserFragment.newInstance(userLogin) }
 
     fun imageConverter(): Screen =
         FragmentScreen { ImageConverterFragment() }
