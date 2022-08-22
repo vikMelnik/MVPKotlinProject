@@ -15,7 +15,7 @@ data class Repository(
     @SerializedName("full_name")
     val fullName: String,
     @SerializedName("owner")
-    val owner: GithubUser,
+    val owner: GithubUserNew,
     @SerializedName("private")
     val private: Boolean = false,
     @SerializedName("html_url")

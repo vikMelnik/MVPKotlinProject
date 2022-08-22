@@ -20,39 +20,46 @@ class LoginUserPresenter(
 
     override fun onFirstViewAttach() {
         if (repositoryUrl != null) {
+            viewState.initList()
             viewState.hideErrorBar()
             viewState.showProgressBar()
-            usersRepo.getRepositoryByUrl(repositoryUrl)
+           usersRepo
+                .getRepositoryByUrl(repositoryUrl)
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(
-                    object : SingleObserver<Repository> {
-                        override fun onSubscribe(d: Disposable) {
-                            disposables.add(d)
-                        }
-
-                        override fun onError(e: Throwable) {
-                            viewState.showLogin("ERROR")
-                            viewState.hideProgressBar()
-                            viewState.showErrorBar()
-                        }
-
-                        override fun onSuccess(t: Repository) {
-                            t.let {
-                                viewState.showLogin(it.owner.login)
-                                //viewState.setImageAvatar(it.owner.avatarUrl)
-                                viewState.showNameRepository(it.name)
-                                viewState.showDescriptionRepository(
-                                    t.description
-                                            + " \nЗвездный рейтинг: " + it.stargazersCount
-                                            + " \nКоличество наблюдателей: " + it.watchersCount
-                                )
-                                viewState.showCountFork("Количество форков: " + it.forksCount)
-                                viewState.hideProgressBar()
-                            }
-                        }
+                .subscribe(object : SingleObserver<Repository> {
+                    override fun onSubscribe(d: Disposable?) {
+                        disposables.add(d)
                     }
-                )
+
+                    override fun onSuccess(repoInfo: Repository?) {
+                        onGetRepositorySuccess(repoInfo)
+                    }
+
+                    override fun onError(e: Throwable?) {
+                        onGetRepositoryError(e)
+                    }
+                })
         }
+    }
+
+    private fun onGetRepositorySuccess(repoInfo: Repository?) {
+        repoInfo?.let {
+            viewState.showLogin(it.owner.login)
+            viewState.setImageAvatar(it.owner.avatarUrl)
+            viewState.showNameRepository(it.name)
+            viewState.showDescriptionRepository(
+                it.description
+                        + " \nЗвездный рейтинг: " + it.stargazersCount
+                        + " \nКоличество наблюдателей: " + it.watchersCount
+            )
+            viewState.showCountFork("Количество форков: " + it.forksCount)
+            viewState.hideProgressBar()
+        }
+    }
+
+    private fun onGetRepositoryError(e: Throwable?) {
+        viewState.hideProgressBar()
+        viewState.showErrorBar()
     }
 
     fun onBackPressed(): Boolean {
